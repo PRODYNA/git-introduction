@@ -282,3 +282,76 @@ To check the remote branch associated with the current branch, use:
 git branch -vv
 ```
 
+## How do I delete branch?
+
+To delete a branch, use:
+
+```sh
+git branch -d <branch-name>
+```
+
+## How do I delete a remote branch?
+
+To delete a remote branch, use:
+
+```sh
+git push origin --delete <branch-name>
+```
+
+## How do I rename a branch?
+
+To rename a branch, use:
+
+```sh
+git branch -m <new-branch-name>
+```
+
+This command renames the current branch to `new-branch-name`.
+
+## How do I delete branches, that are not on the remote?
+
+To delete branches that are not on the remote, use:
+
+```sh
+git fetch --prune
+```
+
+This command fetches the latest changes from the remote repository and prunes (deletes) local branches that no longer exist on the remote.
+
+## How do I list all branches?
+
+To list all branches, use:
+
+```sh
+git branch -a
+```
+
+This command displays both local and remote branches.
+
+## How do I list all remote branches?
+
+To list all remote branches, use:
+
+```sh
+git branch -r
+```
+
+This command displays only remote branches.
+
+## How do I list all branches with the last commit message?
+
+To list all branches with the last commit message, use:
+
+```sh
+git branch -v
+```
+
+This command displays the last commit message for each branch.
+
+## How do I display a graph of all commits and branches?
+
+To display a graph of all commits and branches, use:
+
+```sh
+git log --oneline --graph --all
+```
