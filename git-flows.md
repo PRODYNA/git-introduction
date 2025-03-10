@@ -10,6 +10,19 @@ Branching strategies define how teams collaborate, handle feature development, a
 ### **a) Git Flow** (Best for structured release cycles)
 A well-defined model for large teams and projects with planned releases.
 
+```mermaid
+graph TD;
+    A[main] -->|create| B[develop]
+    B -->|create| C[feature/branch-name]
+    C -->|merge| B
+    B -->|create| D[release/x.y.z]
+    D -->|merge| A
+    D -->|merge| B
+    A -->|create| E[hotfix/x.y.z]
+    E -->|merge| A
+    E -->|merge| B
+```
+
 - **Main branches:**
     - `main` (or `master`): Always contains stable production-ready code.
     - `develop`: Integration branch for features before a release.
@@ -33,6 +46,14 @@ git branch -d feature/new-feature
 ### **b) GitHub Flow** (Best for Continuous Deployment)
 A simpler workflow suitable for fast-moving projects and small teams.
 
+```mermaid
+graph TD;
+    A[main] -->|create| B[feature/branch-name]
+    B -->|pull request| A
+    A -->|merge| C[main]
+    C -->|deploy| D[production]
+```
+
 - **Only one permanent branch (`main`)**
 - All work happens in **short-lived feature branches**.
 - Merges are done via pull requests (PRs), often requiring approval before merging into `main`.
@@ -49,6 +70,16 @@ git push origin feature/new-feature
 
 ### **c) GitLab Flow** (Best for CI/CD and DevOps)
 A mix of GitHub Flow and Git Flow, with structured release branches.
+
+```mermaid
+graph TD;
+    A[main] -->|create| B[feature/branch-name]
+    B -->|merge request| A
+    A -->|tag| C[release/x.y.z]
+    C -->|deploy| D[production]
+    A -->|create| E[environment/branch-name]
+    E -->|merge request| A
+```
 
 - `main` always contains production-ready code.
 - `develop` or environment branches (`staging`, `qa`) are optional.

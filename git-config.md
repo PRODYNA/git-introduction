@@ -2,6 +2,20 @@
 
 In Git, the `git config` command is used to set various configurations that affect how Git behaves. These settings can be global or local, depending on whether you want the configuration to apply across all repositories or just one specific repository.
 
+### Git configuration locations
+
+- **System**: Applies to all users on the system.
+  - File: `/etc/gitconfig`
+  - Command: `git config --system`
+
+- **Global**: Applies to the current user.
+  - File: `~/.gitconfig` or `~/.config/git/config`
+  - Command: `git config --global`
+
+- **Local**: Applies to the current repository.
+  - File: `.git/config`
+  - Command: `git config --local`
+
 ### Important Git Configuration Settings
 
 1. **User Information:**
