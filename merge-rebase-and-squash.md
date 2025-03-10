@@ -7,11 +7,52 @@ When working with Git, you often need to integrate changes from one branch into 
 ---
 
 ## **1. Merge**
+
+```mermaid
+sequenceDiagram
+    participant Main
+    participant FeatureBranch
+
+    Main->>Main: commit 1
+    Main->>Main: commit 2
+    Main->>Main: commit 3
+    FeatureBranch->>FeatureBranch: branch from main
+    FeatureBranch->>FeatureBranch: commit a
+    FeatureBranch->>FeatureBranch: commit b
+    FeatureBranch->>FeatureBranch: commit c
+    FeatureBranch->>Main: merge into main
+    Main->>Main: merge commit
+```
+
 ### **What is Merge?**
 Merging combines the changes from two branches into one, preserving the commit history of both branches. When you merge a branch (e.g., `feature-branch`) into another branch (e.g., `main`), Git creates a **new merge commit** that ties together the history of both branches.
 
 ### **Types of Merge**
 #### **a) Fast-forward Merge**
+
+```mermaid
+graph TD;
+  subgraph Fast-Forward Merge
+    A[main] -->|commit 1| B[commit 1];
+    B -->|commit 2| C[commit 2];
+    C -->|commit 3| D[commit 3];
+    D -->|commit 4| E[commit 4];
+    A1[feature-branch] -->|branch from commit 3| D;
+    D -->|merge| E;
+  end
+
+subgraph Non-Fast-Forward Merge
+F[main] -->|commit 1| G[commit 1];
+G -->|commit 2| H[commit 2];
+H -->|commit 3| I[commit 3];
+J[feature-branch] -->|branch from commit 2| G;
+J -->|commit a| K[commit a];
+K -->|commit b| L[commit b];
+I -->|merge| M[merge commit];
+L -->|merge| M;
+end
+```
+
 - Happens when the target branch (`main`) has not diverged from the feature branch (`feature-branch`).
 - Git simply moves the branch pointer forward.
 - No new merge commit is created.
@@ -45,6 +86,24 @@ Merging combines the changes from two branches into one, preserving the commit h
 ---
 
 ## **2. Rebase**
+
+```mermaid
+sequenceDiagram
+    participant Main
+    participant FeatureBranch
+
+    Main->>Main: commit 1
+    Main->>Main: commit 2
+    Main->>Main: commit 3
+    FeatureBranch->>FeatureBranch: commit a
+    FeatureBranch->>FeatureBranch: commit b
+    FeatureBranch->>FeatureBranch: commit c
+    FeatureBranch->>Main: rebase onto main
+    Main->>Main: commit a'
+    Main->>Main: commit b'
+    Main->>Main: commit c'
+```
+
 ### **What is Rebase?**
 Rebasing moves a branch to a new base by **applying** its commits on top of another branch’s latest state. Instead of a merge commit, rebase rewrites commit history.
 
@@ -83,6 +142,19 @@ This allows you to:
 ---
 
 ## **3. Squash**
+
+```mermaid
+graph TD;
+    A[main] -->|commit 1| B[commit 1];
+    B -->|commit 2| C[commit 2];
+    C -->|commit 3| D[commit 3];
+    A1[feature-branch] -->|commit a| B1[commit a];
+    B1 -->|commit b| C1[commit b];
+    C1 -->|commit c| D1[commit c];
+    D1 -->|squash| E[commit a+b+c];
+    D -->|squash| E; 
+```
+
 ### **What is Squash?**
 Squashing combines multiple commits into **one single commit**. It is often used during rebasing or merging to simplify commit history.
 

@@ -7,6 +7,30 @@
 - Subversion (SVN) is **centralized**, meaning all changes must go through a central server.
 - With Git, users can work offline, commit locally, and later sync with a remote repository.
 
+```mermaid
+graph TD;
+    subgraph Centralized Repository
+        A[Central Server] -->|commit| B[Developer 1];
+        A -->|commit| C[Developer 2];
+        A -->|commit| D[Developer 3];
+        B -->|push/pull| A;
+        C -->|push/pull| A;
+        D -->|push/pull| A;
+    end
+
+    subgraph Distributed Repository
+        E[Developer 1] -->|commit| F[Local Repo 1];
+        G[Developer 2] -->|commit| H[Local Repo 2];
+        I[Developer 3] -->|commit| J[Local Repo 3];
+        F -->|push/pull| K[Remote Repo];
+        H -->|push/pull| K;
+        J -->|push/pull| K;
+        K -->|push/pull| F;
+        K -->|push/pull| H;
+        K -->|push/pull| J;
+    end
+```
+
 ### **How Git stores changes (snapshots vs. diffs in Subversion)**
 - SVN stores **differences (diffs)** between file versions.
 - Git stores **snapshots** of the entire project at each commit, making branching and reverting more efficient.
