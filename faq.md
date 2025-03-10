@@ -242,3 +242,43 @@ git reset --hard HEAD~1
 
 This sequence of commands cherry-picks the specified commit to the destination branch, resets the source branch to the commit before the last one, and discards the commit from the source branch.
 
+## How do I check the current branch name?
+
+To check the current branch name, use:
+
+```sh
+git branch --show-current
+```
+
+or simply 
+
+```sh
+git branch
+```
+
+or 
+
+```sh
+git status
+```
+
+These commands display the current branch name in the output.
+
+## How do I check the remote URL of a repository?
+
+To check the remote URL of a repository, use:
+
+```sh
+git remote get-url origin
+```
+
+This command displays the URL of the remote repository named `origin`.
+
+## How do I check the remote branch?
+
+To check the remote branch associated with the current branch, use:
+
+```sh
+git branch -vv
+```
+
