@@ -1,3 +1,5 @@
+# Git Switch and Checkout
+
 The difference between `git checkout` and `git switch` comes down to **scope** and **clarity**:
 
 1. **`git switch` is dedicated to branch switching**
@@ -106,4 +108,3 @@ git checkout -- file.txt
 - If you’re restoring files, use `git restore`.
 - If you’re working with commits, `git checkout` (or `git switch --detach`) is fine.
 
-Let me know if you need more details or real-world examples! 🚀

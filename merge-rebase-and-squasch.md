@@ -1,3 +1,5 @@
+# Merge, Rebase and Squash
+
 ### **Merge, Rebase, and Squash in Git – Detailed Explanation**
 
 When working with Git, you often need to integrate changes from one branch into another. Git provides multiple ways to do this, with **merge**, **rebase**, and **squash** being three key techniques. Each has its own use case and effect on the commit history.

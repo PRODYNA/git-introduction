@@ -1,6 +1,4 @@
-Here's a detailed breakdown of your workshop topics with explanations for each point:
-
----
+# Git Concepts
 
 ## **1. Introduction to Git Concepts**
 

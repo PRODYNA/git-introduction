@@ -31,4 +31,3 @@ Here's a table comparing common Subversion (SVN) and Git commands to help users 
 | **Undo last commit**           | *(Difficult in SVN)*                | `git reset --soft HEAD~1`                   | Git allows rewriting history. |
 | **Hard reset to previous state** | *(Difficult in SVN)*                | `git reset --hard <commit>`                 | Git allows discarding local changes. |
 
-Would you like additional explanations for any of these commands? 🚀

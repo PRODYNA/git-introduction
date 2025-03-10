@@ -1,4 +1,4 @@
-Since you're conducting a workshop on Git, here are some **Git best practices** that will be useful for both beginners and advanced users. These cover areas like commit hygiene, branching strategies, collaboration, and security.
+# Git Best Practices
 
 ---
 
@@ -81,5 +81,3 @@ Since you're conducting a workshop on Git, here are some **Git best practices** 
     - `git reflog` (Recover lost commits)
 
 ---
-
-Would you like a cheat sheet or any hands-on exercises for your workshop? 🚀

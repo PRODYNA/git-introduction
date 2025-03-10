@@ -1,3 +1,5 @@
+# Git Flows
+
 Git workflows for branching, tagging, and releasing vary depending on team structure, project complexity, and deployment strategy. Here are some commonly used workflows:
 
 ---
@@ -137,5 +139,3 @@ git merge hotfix/1.0.1
 - **For large teams & structured releases** → Git Flow.
 - **For fast iteration & CI/CD** → GitHub Flow.
 - **For DevOps teams with multiple environments** → GitLab Flow.
-
-Do you need specific Git workflows tailored for your customer transitioning from Subversion to Git?
