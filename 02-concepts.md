@@ -260,4 +260,3 @@ graph TD;
 
 ---
 
-This should give them a strong foundation in Git! Would you like me to create slides, a cheat sheet, or exercises for hands-on learning?

@@ -99,5 +99,3 @@ While Mercurial is still used in some legacy systems, **Git's ecosystem and comm
 
 ### **Conclusion**
 While SVN is still used in some legacy projects, Git has become the dominant VCS due to its flexibility, speed, and suitability for modern software development practices, especially in open-source projects.
-
-Would you like any specific comparisons between SVN and Git for your workshop?
